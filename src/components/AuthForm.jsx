@@ -40,15 +40,15 @@ export default function AuthForm() {
       return;
     }
 
-    try {
-      const response = await fetch(
-        `https://mental-health-backend-1.onrender.com`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
+   try {
+  const response = await fetch(
+    `https://mental-health-backend-1.onrender.com/auth/login`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    }
+  );
 
       const data = await response.json();
 
