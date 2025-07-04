@@ -16,7 +16,7 @@ export default function Book() {
     const fetchBookings = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch("http://localhost:5000/api/bookings", {
+        const res = await fetch("https://mental-health-backend-1.onrender.com", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
@@ -44,7 +44,7 @@ export default function Book() {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/api/bookings", {
+      const response = await fetch("https://mental-health-backend-1.onrender.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

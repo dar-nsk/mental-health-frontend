@@ -15,7 +15,7 @@ useEffect(() => {
         return;
       }
 
-      const response = await fetch("http://localhost:5000/auth/me", {
+      const response = await fetch("https://mental-health-backend-1.onrender.com", {
         headers: {
           Authorization: `Bearer ${token}`
         }

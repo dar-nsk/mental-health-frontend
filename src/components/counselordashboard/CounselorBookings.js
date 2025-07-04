@@ -11,7 +11,7 @@ export default function CounselorBookings() {
   const fetchBookings = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/bookings/all", {
+      const res = await fetch("https://mental-health-backend-1.onrender.com", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -25,7 +25,7 @@ export default function CounselorBookings() {
     setLoading(true);
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/api/bookings/${id}/status`, {
+      const res = await fetch(`https://mental-health-backend-1.onrender.com`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

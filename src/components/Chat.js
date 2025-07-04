@@ -18,7 +18,7 @@ export default function Chat() {
   const fetchQuestions = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/chat/questions", {
+      const res = await fetch("https://mental-health-backend-1.onrender.com", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -34,7 +34,7 @@ export default function Chat() {
     if (!newQuestion.trim()) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/chat/questions", {
+      const res = await fetch("https://mental-health-backend-1.onrender.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -140,7 +140,7 @@ function QuestionCard({ question, token, onReplyPosted }) {
     try {
       setLoadingReplies(true);
       const res = await fetch(
-        `http://localhost:5000/api/chat/replies/${question._id}`,
+        `https://mental-health-backend-1.onrender.com`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -159,7 +159,7 @@ function QuestionCard({ question, token, onReplyPosted }) {
     if (!replyText.trim()) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/chat/replies", {
+      const res = await fetch("https://mental-health-backend-1.onrender.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
